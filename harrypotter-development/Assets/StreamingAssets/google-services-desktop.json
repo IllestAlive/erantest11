@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1006445261313",
+    "firebase_url": "https://arenamode-94ca8-default-rtdb.firebaseio.com",
+    "project_id": "arenamode-94ca8",
+    "storage_bucket": "arenamode-94ca8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006445261313:android:21ef7065a65b3a4f4c8600",
+        "android_client_info": {
+          "package_name": "com.valhallaverse.arenamode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006445261313-bebpbjsdn6p2l1m8l7i74j71u0vrhiil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE6zkU7THtgNMewVyx7iujq-PkAHHCaAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006445261313-bebpbjsdn6p2l1m8l7i74j71u0vrhiil.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1006445261313-07h9knaoiuelo28sglmg51mcdl5c063g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.valhallaverse.arenamode"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

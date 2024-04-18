@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e70925004ce4f498531665f1e26a47, type: 3}
+  m_Name: "6 - Bj\xF6rn Ironside"
+  m_EditorClassIdentifier: 
+  id: 6
+  nickname: Ironside
+  name: "Bj\xF6rn Ragnarsson"
+  level: 8
+  description: "Bj\xF6rn Ironside, according to Norse legends, was a Norse Viking
+    chief and Swedish king. According to the 12th- and 13th-century Scandinavian
+    histories, he was the son of notorious Viking king Ragnar Lodbrok and lived in
+    the 9th century, being dated between 855 and 858. Bj\xF6rn Ironside is said to
+    have been the first ruler of the Swedish Muns\xF6 dynasty. In the early 18th
+    century, a barrow on the island of Muns\xF6 was claimed by antiquarians to be
+    Bj\xF6rn J\xE4rnsidas h\xF6g or Bj\xF6rn Ironside's barrow."

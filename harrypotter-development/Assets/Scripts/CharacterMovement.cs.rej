@@ -1,0 +1,312 @@
+diff a/Assets/Scripts/CharacterMovement.cs b/Assets/Scripts/CharacterMovement.cs	(rejected hunks)
+@@ -1,143 +0,229 @@
+-using System;
+ using System.Collections;
+-using System.Collections.Generic;
+ using Mirror;
+ using UnityEngine;
++using UnityEngine.AI;
++
++public struct InputPayload
++{
++    public int Tick;
++    public Vector3 InputVector;
++}
++public struct StatePayload
++{
++    public int Tick;
++    public Vector3 Position;
++}
++
+ 
+ public class CharacterMovement : NetworkBehaviour
+ {
+     [Header("Mobile")]
+     public bool isMobile;
+     public Joystick movementJoystick;
++    public Transform healthBar;
+ 
+     [Header("Common")]
+     public bool forceToJoystick;
+-
+-    public Vector3 lastReceivedPosition;
+-
+     private Vector2 inputToSend;
+-
+-    [SerializeField] private Vector3 moveDirection;
++    private Vector3 moveDirection;
+     private Vector3 lookTarget;
+-
++    private float horizontalInput;
++    private float verticalInput;
+     public GameObject model;
+-    
+     public float speed;
+-
+-    public float timePassed;
+-
++    public float timer;
+     public bool isMoving, isMovementAnimating;
++    
++    //Prediction and reconciliation
++    private int currentTick;
++    private float minTimeBetweenTicks=>1/SERVER_TICK_RATE;
++    private const float SERVER_TICK_RATE = 30f;
++    private const int BUFFER_SIZE = 1024;
++    private StatePayload[] stateBuffer;
++    private InputPayload[] inputBuffer;
++    private StatePayload latestServerState;
++    private StatePayload lastProcessedState;
++    private Vector3 oldPos;
++    private Vector3 targetPos;
++    private Vector3 enemyTargetPosHolder;
++    private static Vector3 enemyTargetPos;
++    private CharacterMovementOnServer characterMovementOnServer;
++    private NavMeshAgent myAgent;
++    private NavMeshAgent enemyAgent;
++    private static CharacterMovement cMov1;
++    private bool realCharacter;
+ 
+-    public Rigidbody rb;
+-
++    
+     public override void OnStartClient()
+     {
+-        base.OnStartClient();
+-
++        
+         movementJoystick = UIManager.Instance.movementJoystick;
++        if (hasAuthority)
++        {
++            myAgent = GetComponent<NavMeshAgent>();
++        }
++        else
++        {
++            enemyAgent = GetComponent<NavMeshAgent>();
++        }
+ 
+-        lastReceivedPosition = transform.position;
+         StartCoroutine(DirectionCalculator());
+-
+-#if UNITY_STANDALONE || UNITY_STANDALONE_OSX || UNITY_EDITOR
+-        isMobile = forceToJoystick || false;
+-#else
+-        isMobile = true;
+-#endif
+-
+     }
+ 
+-    public override void OnStartServer()
++    private void Start()
+     {
+-        base.OnStartServer();
++        Debug.Log("Start çalıştı");
++        if (hasAuthority)
++        {
++            Debug.Log("Otoritem var");
++        }
++        stateBuffer = new StatePayload[BUFFER_SIZE];
++        inputBuffer = new InputPayload[BUFFER_SIZE];
++        characterMovementOnServer = GetComponent<CharacterMovementOnServer>();
+     }
+ 
+-    // Update is called once per frame
+-    void Update()
++    private void Update()
+     {
+-        if (isServer)
++        if (isServer) return;
++        if (hasAuthority)
+         {
+-            return;
++            Debug.Log("Oold pos : "+ oldPos + " TargetPos : "+ targetPos);
++            GetInputs();
++            timer += Time.deltaTime;
++            if (timer >= minTimeBetweenTicks)
++            {
++                enemyTargetPos = enemyTargetPosHolder;
++                HandleTick();
++                timer -= minTimeBetweenTicks;
++            }
++            
++            //Debug.Log("Oold pos : "+ oldPos + " TargetPos : "+ targetPos);
++            myAgent.destination = targetPos;
++
++            //transform.position = Vector3.Lerp(oldPos, targetPos, timer/minTimeBetweenTicks);
++            Vector3 lookDir = (targetPos - oldPos) != Vector3.zero ? targetPos - oldPos : transform.forward;
++            transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(lookDir)
++                ,Time.deltaTime*30);
+         }
+-
+-        timePassed += Time.deltaTime;
+-        if (timePassed >= 0.033333f)
++        else
+         {
+-            timePassed = 0;
++            Debug.Log("Enemy Move : "+enemyTargetPos);
++            enemyAgent.destination = enemyTargetPos;
++        }
++        
++    }
++    
++    [Client]
++    private void HandleTick()
++    {
++        if (!latestServerState.Equals(default(StatePayload)) &&
++            (lastProcessedState.Equals(default(StatePayload)) ||
++             !latestServerState.Equals(lastProcessedState)))
++        {
++            HandleServerReconciliation();
+         }
+ 
++        isMoving = (horizontalInput != 0f || verticalInput != 0);
++        
+ 
+-        var lastPos = transform.position;
+-
+-        transform.position = Vector3.Lerp(transform.position, lastReceivedPosition, Time.deltaTime * 10);
++        int bufferIndex = currentTick % BUFFER_SIZE;
++        InputPayload inputPayload = new InputPayload
++        {
++            Tick = currentTick,
++            InputVector = new Vector3(horizontalInput, 0, verticalInput)
++        };
++        inputBuffer[bufferIndex] = inputPayload;
++        stateBuffer[bufferIndex] = ProcessMovement(inputPayload);
++        characterMovementOnServer.OnClientInput(inputPayload);
+     }
+-
+-    private void FixedUpdate()
++    private void OnGUI()
+     {
+-        
+-        
+-        if (isServer)
++        if (!hasAuthority)
+         {
+-            GetComponent<Rigidbody>().velocity = Vector3.zero;
++            return;
+         }
+-        if (hasAuthority &&  UIManager.Instance.myHp.value > 0)
++        GUILayout.Label(GetComponent<Character>().animationManager.currentState.ToString());
++    }
++    
++    [Client]
++    private void HandleServerReconciliation()
++    {
++        lastProcessedState = latestServerState;
++
++        int serverStateBufferIndex = latestServerState.Tick % BUFFER_SIZE;
++        float positionError = Vector3.Distance(latestServerState.Position,
++            stateBuffer[serverStateBufferIndex].Position);
++
++        if (positionError > 0.001f)
+         {
+-            if (!StartManagerInGame.Instance.canStart)
+-                return;
++            Debug.Log("We have to reconcile");
++            targetPos = latestServerState.Position;
+ 
+-            inputToSend = !isMobile ? new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
+-                : new Vector2(movementJoystick.Horizontal, movementJoystick.Vertical);
+-            SendInput(inputToSend);
++            // Update buffer at index of latest server state
++            stateBuffer[serverStateBufferIndex] = latestServerState;
+ 
+-            isMoving = inputToSend.x != 0 || inputToSend.y != 0;
++            // Now re-simulate the rest of the ticks up to the current tick on the client
++            int tickToProcess = latestServerState.Tick + 1;
+ 
+-            //If we've started moving in this frame
+-            if (!isMovementAnimating && isMoving)
++            while (tickToProcess < currentTick)
+             {
+-                GetComponent<Character>().animationManager.SetAnimationStateCMD(CharacterAnimationState.Run);
+-                isMovementAnimating = true;
+-            }
++                int bufferIndex = tickToProcess % BUFFER_SIZE;
+ 
+-            //If we've stopped in this frame
+-            if (isMovementAnimating && !isMoving)
+-            {
+-                GetComponent<Character>().animationManager.SetAnimationStateCMD(CharacterAnimationState.Idle);
+-                isMovementAnimating = false;
++                // Process new movement with reconciled state
++                StatePayload statePayload = ProcessMovement(inputBuffer[bufferIndex]);
++
++                // Update buffer with recalculated state
++                stateBuffer[bufferIndex] = statePayload;
++
++                tickToProcess++;
+             }
+         }
+     }
+-
+     
+-
+-    private void OnGUI()
++    private StatePayload ProcessMovement(InputPayload input)
+     {
+-        if (!hasAuthority)
++        oldPos = targetPos;
++        targetPos = targetPos + input.InputVector * (speed * minTimeBetweenTicks);
++
++        return new StatePayload()
+         {
+-            return;
+-        }
+-        GUILayout.Label(GetComponent<Character>().animationManager.currentState.ToString());
++            Tick = input.Tick,
++            Position = targetPos,
++        };
+     }
+ 
+-    [Command]
+-    private void SendInput(Vector2 input)
++    private void OnDrawGizmos()
+     {
+-        var targetPos = transform.position + (input.x * Vector3.right + input.y * Vector3.forward) * Time.fixedDeltaTime * speed;
+-
+-        targetPos.x = Mathf.Clamp(targetPos.x, -9, 9);
+-        targetPos.z = Mathf.Clamp(targetPos.z, -16f, 16);
+-
+-        transform.position = targetPos;
++        Gizmos.color = Color.red;
++        Gizmos.DrawSphere(transform.position + moveDirection, .2f);
++    }
++    
++    [Client]
++    private void GetInputs()
++    {
++#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
++        horizontalInput = Input.GetAxisRaw("Horizontal");
++                verticalInput = Input.GetAxisRaw("Vertical");
++#else
++            horizontalInput = movementJoystick.Horizontal;
++            verticalInput = movementJoystick.Vertical;
++#endif
+ 
+-        FixPosition(transform.position);
+     }
+ 
+-    [ClientRpc]
+-    private void FixPosition(Vector3 pos)
++    [TargetRpc]
++    public void OnServerMovementState(StatePayload serverState)
+     {
+-        lastReceivedPosition = pos;
++        latestServerState = serverState;
+     }
+-
+-    IEnumerator DirectionCalculator()
++    
++    [TargetRpc]
++    public void SetEnemyPos(Vector3 pos)
++    {
++        enemyTargetPosHolder = pos;
++    }
++    
++    private IEnumerator DirectionCalculator()
+     {
+         while (true)
+         {

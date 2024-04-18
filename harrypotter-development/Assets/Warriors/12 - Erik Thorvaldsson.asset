@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e70925004ce4f498531665f1e26a47, type: 3}
+  m_Name: 12 - Erik Thorvaldsson
+  m_EditorClassIdentifier: 
+  id: 12
+  nickname: Erik The Red
+  name: Erik Thorvaldsson
+  level: 7
+  description: "Erik Thorvaldsson, known as Erik the Red, was a Norse explorer, described
+    in medieval and Icelandic saga sources as having founded the first settlement
+    in Greenland. He most likely earned the epithet \"the Red\" due to the color
+    of his hair and beard. According to Icelandic sagas, he was born in the J\xE6ren
+    district of Rogaland, Norway, as the son of Thorvald Asvaldsson. One of Erik's
+    sons was the well-known Icelandic explorer Leif Erikson."

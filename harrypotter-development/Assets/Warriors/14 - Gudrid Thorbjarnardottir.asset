@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e70925004ce4f498531665f1e26a47, type: 3}
+  m_Name: 14 - Gudrid Thorbjarnardottir
+  m_EditorClassIdentifier: 
+  id: 14
+  nickname: Gudridur
+  name: Gudrid Thorbjarnardottir
+  level: 6
+  description: "Gudrid Thorbjarnard\xF3ttir\u2019s story is told in the Saga of Erik
+    the Red and the Saga of the Greenlanders, the 13th-century Icelandic chronicles,
+    known collectively as the Vinland Sagas. As the story goes, Gudrid was born in
+    the late 9th century in Sn\xE6fellsnes, Iceland, to an early Christian family
+    when paganism was the norm. As a child, she grew up with friends of her father,
+    a traditional custom of the period."

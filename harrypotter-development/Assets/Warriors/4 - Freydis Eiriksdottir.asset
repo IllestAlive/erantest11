@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e70925004ce4f498531665f1e26a47, type: 3}
+  m_Name: 4 - Freydis Eiriksdottir
+  m_EditorClassIdentifier: 
+  id: 4
+  nickname: Freydis
+  name: Freydis Eiriksdottir
+  level: 5
+  description: "Freyd\xEDs Eir\xEDksd\xF3ttir was a Norse woman said to be the daughter
+    of Erik the Red (as in her patronym), who figured prominently in the Norse exploration
+    of North America as an early colonist of Vinland, while her brother, Leif Erikson,
+    is credited in early histories of the region with the first European contact."

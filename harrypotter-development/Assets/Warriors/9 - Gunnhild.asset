@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e70925004ce4f498531665f1e26a47, type: 3}
+  m_Name: 9 - Gunnhild
+  m_EditorClassIdentifier: 
+  id: 9
+  nickname: Gunnhildr
+  name: Gunnhild
+  level: 4
+  description: "Gunnhildr konungam\xF3\xF0ir or Gunnhildr Gormsd\xF3ttir, whose name
+    is often Anglicised as Gunnhild (c. 910  \u2013  c. 980) is a quasi-historical
+    figure who appears in the Icelandic Sagas, according to which she was the wife
+    of Eric Bloodaxe (king of Norway 930\u201334, 'King' of Orkney c. 937\u201354,
+    and king of J\xF3rv\xEDk 948\u201349 and 952\u201354). She appears prominently
+    in sagas such as Fagrskinna, Egils saga, Nj\xE1ls saga, and Heimskringla."

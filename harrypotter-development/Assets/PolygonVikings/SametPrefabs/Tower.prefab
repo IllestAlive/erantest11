@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5804877745680771291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5610380068431152897}
+  m_Layer: 0
+  m_Name: Tower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5610380068431152897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804877745680771291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.5, y: 6.132817, z: 38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4182543025779501947}
+  - {fileID: 3761706521745396703}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3761706521744943529
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5610380068431152897}
+    m_Modifications:
+    - target: {fileID: 130268, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_Name
+      value: SM_Bld_Tower_Stone_Base_01_Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9669762
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.132817
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.99188614
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+--- !u!4 &3761706521745396703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 473718, guid: 5549d9de43cc65b44ab490572cc13dc2, type: 3}
+  m_PrefabInstance: {fileID: 3761706521744943529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4182543025779032191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5610380068431152897}
+    m_Modifications:
+    - target: {fileID: 176534, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_Name
+      value: SM_Bld_Tower_01_Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9469757
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+--- !u!4 &4182543025779501947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 469764, guid: d48ea271e36bbf74ea23709a9f7b812c, type: 3}
+  m_PrefabInstance: {fileID: 4182543025779032191}
+  m_PrefabAsset: {fileID: 0}

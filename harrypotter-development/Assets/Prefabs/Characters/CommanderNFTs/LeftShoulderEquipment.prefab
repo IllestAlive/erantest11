@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5023965065676985255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2758070422885523875}
+  m_Layer: 0
+  m_Name: LeftShoulderEquipment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2758070422885523875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023965065676985255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8905912317132881830}
+  - {fileID: 4428003570334642520}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &809765805256140215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2758070422885523875}
+    m_Modifications:
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.206
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.032999966
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.057999797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.37150085
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.34234884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.53881
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6741425
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -28.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -77.8884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -99.357994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127244115, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_Name
+      value: viking_shoulder_t2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913540651127244115, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+--- !u!1 &4428003570334392548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3913540651127244115, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+  m_PrefabInstance: {fileID: 809765805256140215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4428003570334642520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3913540651127002351, guid: b0385579b3bb6634abe59de46b06f0c4, type: 3}
+  m_PrefabInstance: {fileID: 809765805256140215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2440952197992100073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428003570334392548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a156d0e25349e9498cdc0c03c247325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 10
+--- !u!1001 &2840759820114208722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2758070422885523875}
+    m_Modifications:
+    - target: {fileID: 6698048985374102562, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_Name
+      value: viking_shoulde_t1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374102562, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25500003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.031999953
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0009998977
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.35370138
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.3530202
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7561697
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4224684
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 22.904
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 115.2427
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -64.691
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+--- !u!1 &8905912317133173744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6698048985374102562, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+  m_PrefabInstance: {fileID: 2840759820114208722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8905912317132881830 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6698048985374333044, guid: 9c5a3d967b0328543b7971f3023db84f, type: 3}
+  m_PrefabInstance: {fileID: 2840759820114208722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5292814895910404708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905912317133173744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a156d0e25349e9498cdc0c03c247325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9
